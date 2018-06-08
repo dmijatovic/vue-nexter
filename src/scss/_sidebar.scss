@@ -1,0 +1,11 @@
+@import 'variables';
+
+.sidebar{
+  background-color: $color-primary;  
+
+  //placing sidebar in grid
+  grid-column: sidebar-start / sidebar-end;
+  //use all rows
+  grid-row: 1 / -1;
+}
+

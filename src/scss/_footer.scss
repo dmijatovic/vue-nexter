@@ -1,0 +1,7 @@
+
+@import 'variables';
+
+.footer{
+  background-color: $color-grey-dark-1;
+  grid-column: sidebar-start / full-end;
+}

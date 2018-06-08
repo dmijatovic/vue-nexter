@@ -1,0 +1,42 @@
+
+*,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+  box-sizing: inherit;
+}
+
+html{
+  // font-size set to 16px = 1rem;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: $font-primary;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+
+//GRID layout
+.app-container{
+  display:grid;
+  //row definition
+  //1st 80vh
+  //2nd in-content: size to content
+  //3rd relative to width 40vw
+  //4th - 7th size row to content  
+  grid-template-rows: 80vh min-content 40vw repeat(3,min-content);
+  //colomn design
+  //1st fixed width 80px/16 = 5rem, name=sidebar-start, sidebar-end
+  //2nd variable width name=full-start, center-start
+  //3rd-11th 8 columns with min content size and max 160px/16=10rem
+  //12th variable width to fill the space (siilair to 2nd col)
+  grid-template-columns: [sidebar-start] 5rem [sidebar-end full-start] 
+    minmax(4rem, 1fr) [center-start]
+    repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [center-end] 
+    minmax(4rem, 1fr) [full-end];
+}

@@ -1,0 +1,7 @@
+
+@import 'variables';
+
+.header{
+  background-color: $color-primary-dark;
+  grid-column: full-start / col-end 6; 
+}
