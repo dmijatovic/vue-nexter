@@ -1,7 +1,61 @@
 @import 'variables';
 
 .features{
-  background-color: $color-grey-dark-1;
-
+  //background-color: $color-grey-dark-1;
+  //position component in the grid
   grid-column: center-start / center-end;
+
+  margin: 10rem 0;
+
+  //this component is child grid
+  display:grid;
+  //define 3 columns
+  //grid-template-columns: repeat(3,1fr);
+  //define responsive columns width
+  // auto-fit = calculate how menu columns in a row
+  // minmax() = column width in range 20rem (360px) to fill space equally
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  //rows will be automatically added with auto 
+  grid-gap: 4rem;
+
+}
+
+
+.feature{
+  &-item{
+    display: grid;
+    //2 columns:
+    //1st fit content
+    //2nd expaned to fill space
+    grid-template-columns: min-content 1fr;
+    // only first row to have height of 2.5 rem 
+    //grid-template-rows: 2.5rem;
+
+    //1rem gap between rows
+    grid-row-gap: 1rem;
+    //1rem gap between columns
+    grid-column-gap: 1rem;
+
+    //align all grid items to start
+    align-items: start;
+    //align-content: center;
+  }
+
+  &-icon{
+    width: 4rem;
+    height: 4rem;
+    fill: $color-primary;
+    //-1 works only with explicit grid (when row is defined)
+    //so we use span command
+    grid-row: 1 / span 2;
+
+  }
+
+  &-heading{
+    //align-self: start;
+  }
+
+  &-text{
+    font-size: 1rem;
+  }
 }

@@ -1,6 +1,7 @@
 <template>
   <div class="sidebar">
-    Sidebar
+    <!-- Sidebar -->
+    <button class="nav-btn"></button>
   </div>
 </template>
 

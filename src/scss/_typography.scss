@@ -1,0 +1,61 @@
+
+
+@mixin head-defaults {
+  font-family: $font-display;
+  font-weight: 400;
+}
+
+
+.h-1{
+  @include head-defaults();
+}
+.h-2{
+  @include head-defaults();
+  line-height: 1.1;
+  font-size: 2.5rem;
+}
+.h-3{
+  @include head-defaults();
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: $color-primary;
+}
+
+.h-4{
+  @include head-defaults();
+  font-size: 1.5rem;
+}
+
+[class^="h-"]{
+  &.light{
+    color: $color-grey-light-1;
+  }
+  &.dark{
+    color: $color-grey-dark-1;
+  }
+}
+
+.btn{
+  background-color: $color-primary;
+  color: $color-grey-light-1;
+  border: none;
+  border-radius: 2px;
+  font-family: $font-display;
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover{
+    background-color: $color-primary-dark;
+  }
+
+  &:focus{
+    outline: none;
+  }
+}
+
+.mb-sm{ margin-bottom: 1rem;}
+.mb-md{ margin-bottom: 1.5rem;}
+.mb-lg{ margin-bottom: 2rem;}
+.mb-xl{ margin-bottom: 3rem;}

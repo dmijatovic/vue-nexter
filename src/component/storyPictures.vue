@@ -1,12 +1,21 @@
 <template>
   <div class="story-pictures">
-    Story pictures
+    <img v-for="(pic, i) in pictures"
+      :src="pic.img" 
+      :alt="pic.label"
+      :key="pic.src"
+      :class="`story-pic-${i}`" />
   </div>
 </template>
 
 <script>
+import { cfg } from '../app.cfg';
 export default {
-
+  data(){
+    return {
+      pictures: cfg.story.pictures
+    }
+  }
 }
 </script>
 

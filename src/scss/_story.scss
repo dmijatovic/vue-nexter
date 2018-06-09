@@ -4,14 +4,45 @@
 .story{
   //no code here (no story element)
   &-pictures{
-    background-color: $color-grey-light-1; 
-
+    background-color: $color-primary; 
     grid-column: full-start / col-end 4;
+
+    display: grid;
+    //note! when cols and rows are defined
+    //images are automarically placed in the cells
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  &-pic-0{
+    width: 100%;
+    grid-row: 2 / 6;
+    grid-column: 2 / 6;
+  }
+  &-pic-1{
+    width: 100%;
   }
 
   &-content{
-    background-color: $color-grey-light-2;
-
+    background-color: $color-grey-light-1;
     grid-column: col-start 5 / full-end;
+    //we use vw for vertical padding
+    //which reacts to viewport and resizes
+    padding: 4rem 6vw;
+    /* using flexbox
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    */
+    //same using the grid
+    display: grid;
+    align-content: center;
+    justify-items: start;
+  }
+
+  &-text{
+    font-style: italic;
+    margin-bottom: 4rem;
   }
 }
