@@ -35,16 +35,41 @@
       <p>{{home.price.value}}</p>
     </div>
 
-    <button class="btn home-btn">
+    <button class="btn home-btn"
+      @click="showPopup">
       Contact realtor
     </button>
   </div>
 </template>
 
 <script>
+import {eventSvc} from '../system/eventSvc';
 export default {
   props:{
     home: Object 
+  },
+  methods:{
+    showPopup(){
+       //console.log("show modal");
+      eventSvc.$emit('showPopup',{
+        img: this.home.img,
+        title:'Nexter - Home component',
+        subtitle:'Clicked on contact realtor button',
+        body:`
+        Hi there! This demo project is product of advanced CSS 
+        training I followed online on Udemy. It is not completely functional 
+        website due to scope of the exercise. The goal is to learn 
+        CSS grid standard and demo CSS knowledge I obtained during 
+        the training.
+        
+        The content is split into 12 reusable components. 
+        The project JavaScript, CSS and all assets are minified and compiled with Webpack. 
+        
+        <br/><br/>        
+        During the development webpack-dev-server is used for live reloading.
+        `
+      });
+    }
   }
 }
 </script>

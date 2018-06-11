@@ -3,7 +3,9 @@
     <img :src="logo.src" :alt="logo.label" class="header-logo">
     <h3 class="h-3">{{ title }}</h3>
     <h1 class="h-1">{{ callout }}</h1>
-    <button class="btn header-button">View our properties</button>
+    <button 
+      class="btn header-button"
+      @click="showModal">View our properties</button>
     <div class="header-seenon-text">
       {{seenon.title}}
     </div>
@@ -16,6 +18,7 @@
 </template>
 
 <script>
+import {eventSvc} from '../system/eventSvc';
 export default {
   data(){
     return {
@@ -31,7 +34,30 @@ export default {
           {src:'img/logo-bi.png', label:'BI logo'},
         ]
       }
-
+    }
+  },
+  methods:{
+    showModal(){
+      //console.log("show modal");
+      eventSvc.$emit('showPopup',{
+        img:'img/gal-7.jpeg',
+        title:'Nexter - Header component',
+        subtitle:'Clicked on the CTA button!',
+        body:`
+        <p>
+        Hi there! This demo project is product of advanced CSS 
+        training I followed online on Udemy. It is not completely functional 
+        website due to scope of the exercise. The goal is to learn 
+        CSS grid standard and demo CSS knowledge I obtained during the training.
+        </p><p>
+        The standard is not supported by older browsers like 
+        Internet Explorer or old versions of Firefox, Chrome and 
+        Safari. According to CanIUse statistics in June 2018 the grid 
+        layout syntax is supported by the browsers of 85% of 
+        global users.     
+        </p>
+        `
+      });
     }
   }
 }

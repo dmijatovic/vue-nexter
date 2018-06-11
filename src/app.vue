@@ -9,6 +9,7 @@
     <app-homes></app-homes>  
     <app-gallery></app-gallery>
     <app-footer></app-footer>
+    <app-popup></app-popup>
   </section>
 </template>
 

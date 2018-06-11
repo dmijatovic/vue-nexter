@@ -11,9 +11,12 @@ import './scss/main.scss';
 import svgIcon from './system/svgIcon.vue';
 import underConstruction from './system/underConstruction.vue';
 import appLoader from './system/appLoader.vue';
+import appPopup from './system/popupImg.vue';
+
 Vue.component('svg-icon', svgIcon);
 Vue.component('under-construction', underConstruction);
 Vue.component('app-loader', appLoader);
+Vue.component('app-popup', appPopup);
 
 //use router
 Vue.use(VueRouter);

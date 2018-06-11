@@ -8,10 +8,11 @@
   //use all rows
   grid-row: 1 / -1;
 
-  padding: 2rem 0;
+  padding: 2rem 1rem;
+  
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 
   //change sidebar grid layout for tablets
   @media only screen and (max-width: $screen-md){
@@ -27,13 +28,35 @@
 }
 
 .nav-btn{
+  display: flex;
+  flex-direction: column;  
   border:none;
   border-radius: 2px;
+  height: 3rem;
+  background-color: transparent;
 
-  background-color: $color-grey-light-1;
-  height: 2px;
-  width: 3rem;
+  &-line{
+    content: "a";
+    background-color: $color-grey-light-1;
+    height: 2px;
+    width: 3rem;
+    margin-bottom: 1rem;
+  }
+  /*
+  //place first child higher
+  &-line:nth-child(2){
+    transform: translateY(1rem);
+  }
+  //place third child lower
+  &-line:nth-child(3){
+    transform: translateY(2rem);
+  }*/
+  cursor: pointer;
 
+  &:focus{
+    outline: none;
+  }
+  /*
   &::before,
   &::after{
     content: "";
@@ -45,11 +68,10 @@
 
   &::before{ transform: translateY(-1rem)};
   &::after{ transform: translateY(1rem)};
-
+  */
   //change sidebar grid layout for tablets
   @media only screen and (max-width: $screen-md){
     margin-top: 0;
     margin-right: 2rem;
-
   }
 }
