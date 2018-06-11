@@ -83,6 +83,6 @@ body{
     //3rd in-content: size to content
     //4th relative to width 40vw
     //5th - 8th size row to content  
-    grid-template-rows: 5rem calc(100vh - 5rem) min-content 40vw repeat(3,min-content);
+    grid-template-rows: 5rem calc(100vh - 5rem) repeat(5,min-content);
   }
 }

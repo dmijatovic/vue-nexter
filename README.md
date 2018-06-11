@@ -221,3 +221,24 @@ Images have specific ratio. This ratio is maintained in the grid, so the image w
 
 ```
 
+### Responsive grid setup
+
+Using variable/flexible definition on the grid we can create responsive grid layout for the cards or images that does not require use of media query at all!
+
+```scss
+  //responsive layout using grid only
+  //no media-queries needed
+  display: grid;
+  //auto create number of columns that fits minmax defintion
+  //each columns should be at least 25rem (25x16) 
+  //and each column should expand equaly when there is more space
+  //when space is below minimum grid will move items into next row
+  //so the rows will be automatically added too
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); 
+  //define (inner) gap/gutter/space between grid items
+  //note! gap does not include outer padding on the items
+  grid-gap: 5rem;
+
+```
+
+

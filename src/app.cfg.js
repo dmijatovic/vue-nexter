@@ -66,6 +66,49 @@
     iconFile:'img/sprite.svg',
     icoSearch: 'icon-magnifying-glass' 
   },
+  homes:[{ 
+      title:'Beautiful Family House', img: "img/house-1.jpeg", svgIco:'icon-heart-full',
+      location:{ svgIco:'icon-map-pin', country: "USA", cssClas:"home-location"},
+      rooms: { svgIco:'icon-profile-male', value: "5 rooms"},
+      //m2 is in the markup
+      area: { svgIco:'icon-expand', value: "325"},
+      price: { svgIco:'icon-key', value: "$2.200.000"}
+    },{ 
+      title:"Modern glass villa", img: "img/house-2.jpeg", svgIco:'icon-heart-full',
+      location:{ svgIco:'icon-map-pin', country: "Canada", cssClas:"home-location"},
+      rooms: { svgIco:'icon-profile-male', value: "5 rooms"},
+      //m2 is in the markup
+      area: { svgIco:'icon-expand', value: "625"},
+      price: { svgIco:'icon-key', value: "$2.750.000"}
+    },{ 
+      title:'Cozy Country Home', img: "img/house-3.jpeg", svgIco:'icon-heart-full',
+      location:{ svgIco:'icon-map-pin', country: "UK", cssClas:"home-location"},
+      rooms: { svgIco:'icon-profile-male', value: "4 rooms"},
+      //m2 is in the markup
+      area: { svgIco:'icon-expand', value: "525"},
+      price: { svgIco:'icon-key', value: "$550.000"}
+    },{ 
+      title:'Large Rustical Villa', img: "img/house-4.jpeg", svgIco:'icon-heart-full',
+      location:{ svgIco:'icon-map-pin', country: "USA", cssClas:"home-location"},
+      rooms: { svgIco:'icon-profile-male', value: "7 rooms"},
+      //m2 is in the markup
+      area: { svgIco:'icon-expand', value: "560"},
+      price: { svgIco:'icon-key', value: "$2.200.000"}
+    },{ 
+      title:'Majestic Villa', img: "img/house-5.jpeg", svgIco:'icon-heart-full',
+      location:{ svgIco:'icon-map-pin', country: "Germany", cssClas:"home-location"},
+      rooms: { svgIco:'icon-profile-male', value: "18 rooms"},
+      //m2 is in the markup
+      area: { svgIco:'icon-expand', value: "1025"},
+      price: { svgIco:'icon-key', value: "$3.500.000"}
+    },{ 
+      title:'Modern Familly Apartment', img: "img/house-6.jpeg", svgIco:'icon-heart-full',
+      location:{ svgIco:'icon-map-pin', country: "Italy", cssClas:"home-location"},
+      rooms: { svgIco:'icon-profile-male', value: "4 rooms"},
+      //m2 is in the markup
+      area: { svgIco:'icon-expand', value: "125"},
+      price: { svgIco:'icon-key', value: "$666.000"}
+  }],
   footer:{
     links:[{
       path:''

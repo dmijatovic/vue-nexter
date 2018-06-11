@@ -17,8 +17,8 @@
     //grid-column: full-start / full-end;
     //it can be noted also as
     grid-column: 1 / -1;
-
   }
+
 
   &-list{
     display: grid;
@@ -31,6 +31,10 @@
     @media only screen and (max-width: $screen-sm){
       //place realtors horizontaly
       grid-template-columns: repeat(3, min-content max-content);
+    }
+    //change grid layout for =< 640px
+    @media only screen and (max-width: $screen-xs){
+      grid-template-columns: repeat(2, max-content);
     }
   }
 
