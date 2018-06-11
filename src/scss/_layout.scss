@@ -1,4 +1,6 @@
 
+@import 'variables';
+
 *,
 *::before,
 *::after{
@@ -11,6 +13,16 @@ html{
   // font-size set to 16px = 1rem;
   font-size: 100%;
   box-sizing: border-box;
+
+  //decrease it for laptops
+  @media only screen and (max-width:$screen-lg) {
+    font-size: 75%; 
+  }
+
+  //decrease it for laptops
+  @media only screen and (max-width:$screen-md) {
+    font-size: 62.5%; 
+  }
 }
 
 body{
@@ -39,4 +51,38 @@ body{
     minmax(4rem, 1fr) [center-start]
     repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [center-end] 
     minmax(4rem, 1fr) [full-end];
+
+
+  //change grid layout for  =< 1024px
+  @media only screen and (max-width: $screen-md){
+    //row definition
+    //1st 5 rem for sidebar that moves to top
+    //2ng 80vh
+    //3rd in-content: size to content
+    //4th relative to width 40vw
+    //5th - 8th size row to content  
+    grid-template-rows: 5rem 80vh min-content 40vw repeat(3,min-content);
+    //colomn design
+    //1st fixed width 80px/16 = 5rem, name=sidebar-start, sidebar-end
+    //2nd variable width name=full-start, center-start
+    //3rd-11th 8 columns with min content size and max 160px/16=10rem
+    //12th variable width to fill the space (siilair to 2nd col)
+    grid-template-columns: 
+      [full-start] minmax(4rem, 1fr) [center-start]
+      repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [center-end] 
+      minmax(4rem, 1fr) [full-end];
+
+  }
+
+  //change grid layout for =< 800px
+  @media only screen and (max-width: $screen-sm){
+    //row definition
+    //1st 5rem for sidebar on the top
+    //2nd 100vh - 5rem calculated for the header (to fill viewport) 
+    //3rd for the reators that moved from side to below header
+    //3rd in-content: size to content
+    //4th relative to width 40vw
+    //5th - 8th size row to content  
+    grid-template-rows: 5rem calc(100vh - 5rem) min-content 40vw repeat(3,min-content);
+  }
 }

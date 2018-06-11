@@ -2,6 +2,47 @@
 
 .realtors{
   background-color: $color-secondary;
-
   grid-column: col-start 7 / full-end;
+  padding: 3rem;
+
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  grid-row-gap: 2rem;
+
+  //change grid layout for =< 800px
+  @media only screen and (max-width: $screen-sm){
+    //span realtors to ocupy all columns (full width)
+    //grid-column: full-start / full-end;
+    //it can be noted also as
+    grid-column: 1 / -1;
+
+  }
+
+  &-list{
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-column-gap: 2rem;
+    grid-row-gap: 5vh;
+    align-items: center;
+
+    //change grid layout for =< 800px
+    @media only screen and (max-width: $screen-sm){
+      //place realtors horizontaly
+      grid-template-columns: repeat(3, min-content max-content);
+    }
+  }
+
+  &-img{
+    display: block;
+    width: 7rem;
+    border-radius: 50%;
+  }
+
+  &-sold{
+    text-transform: uppercase;
+    color: $color-grey-light-2;
+    margin-top: -3px;
+  }
 }
